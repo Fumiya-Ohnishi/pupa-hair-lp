@@ -47,7 +47,7 @@ export const siteInfo = {
    * Google Maps → 共有 → 地図を埋め込む → src="" の値をコピーして設定。
    */
   googleMapEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.0!2d132.75!3d33.84!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z44CSNzkxLTEwMDEg5oSb5aqb55yM5p2x5bGx5biC5Zyf5bGxIOS4ieWxsQ!5e0!3m2!1sja!2sjp!4v0000000000000", // ← 実際の埋め込みURLに差し替え
+    "https://maps.google.com/maps?q=%E6%84%9B%E5%AA%9B%E7%9C%8C%E6%9D%BE%E5%B1%B1%E5%B8%82%E5%9C%9F%E5%B1%85%E7%94%BA738-11&t=&z=16&ie=UTF8&iwloc=&output=embed",
 } as const;
 
 // ── SEO メタ情報 ─────────────────────────────────────────
