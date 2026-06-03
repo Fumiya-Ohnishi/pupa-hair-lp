@@ -4,6 +4,8 @@
  * ─────────────────────────────────────────────────────────
  * スタイル・施術・空間イメージのギャラリー。
  * カテゴリフィルタ付き。
+ * ※ フィルタ切り替え時に reveal クラスを使わず、
+ *   CSS アニメーションで直接フェードインさせる。
  * ─────────────────────────────────────────────────────────
  */
 import { useState } from "react";
@@ -58,14 +60,18 @@ export default function GallerySection() {
           })}
         </div>
 
-        {/* グリッド */}
+        {/* グリッド — フィルタ切り替え後も確実に表示されるよう reveal を使わず CSS アニメーションで制御 */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {filtered.map((item, i) => (
             <div
-              key={item.id}
-              className="reveal aspect-square overflow-hidden rounded-card shadow-card
-                         hover:shadow-card-hover transition-shadow duration-300"
-              style={{ transitionDelay: `${i * 0.05}s` }}
+              key={`${active}-${item.id}`}
+              className="aspect-square overflow-hidden rounded-card shadow-card
+                         hover:shadow-card-hover transition-shadow duration-300
+                         animate-fade-in"
+              style={{
+                animationDelay: `${i * 0.05}s`,
+                animationFillMode: "both",
+              }}
             >
               <img
                 src={item.src}
